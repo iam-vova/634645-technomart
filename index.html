@@ -7,8 +7,11 @@
   <body>
   	<header class="main-header">
   		<div class="top-line">
-	  		<p class="technomart-logo">Техномарт</p>
-	  		<input type="text" name="search" value="Поиск">
+	  		<a class="technomart-logo" href="index.html">Техномарт</a>
+	  		<form>
+	  			<label class="visually-hidden" for="site-search">Поиск:</label>
+	  			<input type="search" name="search" id="site-search" value="Поиск">	
+	  		</form>
 	  		<a class="bookmarks-button" href="bookmarks.html">Закладки: 0</a>
 	  		<a class="basket-button" href="basket.html">Корзина: 0</a>
 	  		<a class="place-order" href="place_order.html">Оформить заказ</a>
@@ -174,7 +177,7 @@
         <section class="services">
         	<h2>Сервисы</h2>
        		<p>Хороший интернет-магазин отличается от плохого не только ценами! Мы стараемся изо всех сил, чтобы сделать ваши покупки приятными.</p>	
-       		<div class="services-cards">
+       		<div class="services-list">
 	       		<ul class="services-list">
 	       			<li class="services-list-delivery">
 	       				<h3>Доставка</h3>
@@ -187,20 +190,20 @@
 	       			</li>
 	       		</ul>	
 	       		<ul class="services-cards">
-	       			<li class="services-list-delivery">
+	       			<li class="services-cards-delivery">
 	       				<h4>Доставка</h4>
 	       				<p>Мы с удовольствием доставим ваш товар прямо<br> 
 	       					к вашему подъезду совершенно бесплатно! Ведь мы неплохо заработаем,<br>
 	       					поднимая его на ваш этаж!
 	       				</p>
 	       			</li>	
-	       			<li class="services-list-gaurantee ">
+	       			<li class="services-cards-gaurantee ">
 	       				<h4>Гарантия</h4>
 	       				<p>Если купленный у нас товар поломается или заискрит,<br>
 	       				 а также в случае пожара, спровоцированного его возгоранием, вы всегда можете быть уверены в нашей гарантии. Мы обменяем сгоревший товар на новый.<br>
 	       				 Дом уж восстановите как-нибудь сами.</p>
 	       			</li>
-	       			<li class="services-list-credit">
+	       			<li class="services-cards-credit">
 	       				<h4>Кредит</h4>
 	       				<p>Залезть в долговую яму стало проще!<br>
 	       					Кредитные консультанты придут вам на помощь</p>
@@ -230,7 +233,7 @@
         	<h3>Контакты</h3>
         	<p>Вы можете забрать товар сами, заехав в наш офис:</p>
         	<img src="img/map.jpg" width="940" height="446" alt="Карта">
-        	<a class="button" href="help_for_lost.html">Заблудились? Напишите нам!</a>
+        	<a class="write-us-link" href="write_us.html">Заблудились? Напишите нам!</a>
         </section>	
     </main>
     <footer class="main-footer">
@@ -279,9 +282,24 @@
       	</div>
     </footer>
 
-    <section class="modal modal-map">
-      <h2 class="visually-hidden">Как до нас добраться</h2>
-      <span class="modal-close">x</span>
+    <section class="modal modal-write-us">
+      <h2 class="visually-hidden">Заблудились? Напишите нам!</h2>
+      <form class="write-us-form" action="https://echo.htmlacademy.ru" method="post">
+      	 <p>
+          <label for="user-name">Ваше имя:</label>
+          <input id="user-name" type="text" name="full-name" placeholder="Имя Фамилия">
+        </p>
+        <p>
+          <label for="user-email">Ваш e-mail:</label>
+          <input id="user-email" type="text" name="user-email" placeholder="email@example.com">
+        </p>
+        <p>
+          <label for="letter-text">Текст письма:</label>
+          <textarea id="letter-text" name="letter-text" rows="5">В свободной форме</textarea>
+        </p>      
+        <button class="button-send button" type="submit">Отправить</button> 	
+      </form>
+      <button class="modal-close-button button" type="button">Закрыть</button>
     </section>
   </body>
 </html>
