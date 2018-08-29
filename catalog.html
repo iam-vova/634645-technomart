@@ -3,12 +3,19 @@
   <head>
     <meta charset="utf-8">
     <title>Каталог товаров "Техномарт"</title>
+    <link href="https://fonts.googleapis.com/css?family=Cuprum:400,400i,700&amp;subset=cyrillic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=cyrillic" rel="stylesheet">
+    <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
   </head>
   <body>
   	<header class="main-header">
   		<div class="top-line">
 	  		<a class="technomart-logo" href="index.html">Техномарт</a>
-	  		<input type="text" name="search" value="Поиск">
+	  		<form class="search-form">
+          <label class="visually-hidden" for="site-search">Поиск:</label>
+          <input type="search" name="search" id="site-search" value="Поиск:"> 
+        </form>
 	  		<a class="bookmarks-button" href="bookmarks.html">Закладки: 0</a>
 	  		<a class="basket-button basket-button-active" href="basket.html">Корзина: 10</a>
 	  		<a class="place-order" href="place_order.html">Оформить заказ</a>
@@ -54,7 +61,8 @@
           <fieldset>
             <legend>Цена:</legend>
             <label class="visually-hidden" for="price-range">Цена:</label>
-            <input class="filter-input-range" type="range" name="price" id="price-range" min="0" max="30000" step="1000">
+            <div class="minimal-price"></div>
+            <div class="maximum-price"></div>
             <label for="price-min">Минимальная цена</label>
             <input class="visually-hidden filter-input filter-input-range" type="text" name="price-min" id="price-min" value="0">
             <label for="price-max">Максимальная цена</label>
@@ -69,28 +77,34 @@
               </li>
               <li class="filter-option">
                 <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="interskol" id="filter-interskol">
-                <label for="filter-bosch">Интерскол</label>
+                <label for="filter-interskol">Интерскол</label>
               </li>
               <li class="filter-option">
                 <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="makita" id="filter-makita" checked>
-                <label for="filter-bosch">Makita</label>
+                <label for="filter-makita">Makita</label>
               </li>
               <li class="filter-option">
                 <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="dewalt" id="filter-dewalt">
-                <label for="filter-bosch">DeWALT</label>
+                <label for="filter-dewalt">DeWALT</label>
               </li>
               <li class="filter-option">
                 <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="hitachi" id="filter-hitachi">
-                <label for="filter-bosch">Hitachi</label>
+                <label for="filter-hitachi ">Hitachi</label>
               </li>
             </ul>
           </fieldset>
           <fieldset>
             <legend>Питание:</legend>
-            <input type="radio" name="power-supply" id="power-supply-battery" checked>
-            <label for="power-supply-battery">Аккумуляторные</label>
-            <input type="radio" name="power-supply" id="power-supply-mains">
-            <label for="power-supply-mains">Сетевые</label>
+            <ul>
+              <li>
+                <input class="filter-input-radio" type="radio" name="power-supply" id="power-supply-battery" checked>
+                <label for="power-supply-battery">Аккумуляторные</label>
+              </li>
+              <li>
+                <input class="filter-input-radio" type="radio" name="power-supply" id="power-supply-mains">
+                <label for="power-supply-mains">Сетевые</label>
+              </li>
+            </ul>
           </fieldset>
           <button type="submit" class="filter-button button">Показать</button>
         </form>  
@@ -199,7 +213,7 @@
           </li>
         </ul>
         <ul class="pagination-list">
-          <li class="pagination-item pagination-item-current">1</li>
+          <li class="pagination-item pagination-item-current"><a>1</a></li>
           <li class="pagination-item"><a href="#">2</a></li>
           <li class="pagination-item"><a href="#">3</a></li>
           <li class="pagination-item"><a href="#">Следующая</a></li>
@@ -248,19 +262,22 @@
         </div>
         <p class="footer-feedback">
           <b>Обратная связь</b>
-          <a class="button" href="https://htmlacademy.ru">mail@htmlacademy.ru</a>
+          <a href="https://htmlacademy.ru">mail@htmlacademy.ru</a>
         </p>
         <p class="footer-copyright">
           <b>Разработано:</b> 
-          <a class="button" href="https://htmlacademy.ru">htmlacademy.ru</a>
+          <a href="https://htmlacademy.ru">htmlacademy.ru</a>
         </p>  
         </div>
     </footer>
 
     <section class="modal modal-cart-add">
       <h2 class="addtocart-header">Товар добавлен в корзину!</h2>
-      <a class="place-order-link" href="place_order.html">Оформить заказ</a>
-      <button class="modal-close-button button" type="submit">Продолжить покупки</button>
+      <div class="bottom-line-modal">
+        <a class="button place-order-link" href="place_order.html">Оформить заказ</a>
+        <button type="submit">Продолжить покупки</button>
+      </div>
+      <button class="modal-close-button button" type="button">Закрыть</button>
     </section>
   </body>
 </html>
