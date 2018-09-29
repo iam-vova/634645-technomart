@@ -80,13 +80,13 @@
           			<label class="slider-controls-item slider-controls-item--1" for="product-1">Первый</label>
           			<label class="slider-controls-item slider-controls-item--2" for="product-2">Второй</label>
         		</div>
-        		<span class="slider-left"></span>
-        		<span class="slider-right"></span>
+        		<button class="slider-left"></button>
+        		<button class="slider-right"></button>
         		<ul class="slider-list">
         			<li class="slider-item">
             			<h3>Перфораторы</h3>
 			       		<p>Настоящие мужские игрушки</p>
-            			<a class="button promo-block-button" href="drills-catalog.html">Открыть каталог</a>
+            			<a class="button promo-block-button" href="catalog.html">Открыть каталог</a>
           			</li>
           			<li class="slider-item">
             			<h3>Дрели</h3>
@@ -336,21 +336,29 @@
     <section class="modal modal-write-us">
       <h2 class="visually-hidden">Заблудились? Напишите нам!</h2>
       <form class="write-us-form" action="https://echo.htmlacademy.ru" method="post">
-      	 <p>
-          <label for="user-name">Ваше имя:</label>
-          <input id="user-name" type="text" name="full-name" placeholder="Имя Фамилия">
-        </p>
-        <p>
-          <label for="user-email">Ваш e-mail:</label>
-          <input id="user-email" type="text" name="user-email" placeholder="email@example.com">
-        </p>
-        <p>
-          <label for="letter-text">Текст письма:</label>
-          <textarea id="letter-text" name="letter-text" rows="5">В свободной форме</textarea>
-        </p>      
-        <button class="button-send button" type="submit">Отправить</button> 	
+      	<div class="user-info-container">
+      		<p>
+      			<label for="user-name">Ваше имя:</label>
+      			<input id="user-name" type="text" name="full-name" placeholder="Имя Фамилия">
+      		</p>
+      		<p>
+      			<label for="user-email">Ваш e-mail:</label>
+      			<input id="user-email" type="text" name="user-email" placeholder="email@example.com">
+      		</p>
+      	</div>
+      	<p>
+      		<label for="letter-text">Текст письма:</label>
+      		<textarea id="letter-text" name="letter-text" rows="5">В свободной форме</textarea>
+      	</p>
+      	<button class="modal-send button" type="submit">Отправить</button>
       </form>
-      <button class="modal-close-button button" type="button">Закрыть</button>
+      <button class="modal-close" type="button">Закрыть</button>
     </section>
+
+    <section class="modal modal-map">
+  		<h2 class="visually-hidden">Как до нас добраться</h2>
+  		<p><img src="img/map.jpg" width="940" height="446" alt="Офис компании по адресу ул. Большая Конюшенная 19/8, Санкт-Петербург"></p>
+  		<button class="modal-close" type="button">Закрыть</button>
+	</section>
   </body>
 </html>
