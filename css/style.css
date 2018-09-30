@@ -47,9 +47,12 @@ input[type="radio"].visually-hidden {
 
     margin: 0 auto;
     padding: 0;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .main-header {
+
     padding-bottom: 60px;
 
     color: #000000;
@@ -760,7 +763,7 @@ input[type="radio"].visually-hidden {
 }
 
 .slider-item {
-    display: none;
+    /*display: none;*/
     padding-bottom: 25px;
 }
 
@@ -814,17 +817,11 @@ input[type="radio"].visually-hidden {
     background-position: 100% 0;
 }
 
-
-#product-1:checked ~ .slider-list .slider-item:nth-child(1) {
-    display: block;
+.slider-list .slider-item:nth-child(1) {
+    display: none;
 }
 
-#product-2:checked ~ .slider-list .slider-item:nth-child(2) {
-    display: block;
-}
-
-#product-1:checked ~ .slider-controls .slider-controls-item--1::before,
-#product-2:checked ~ .slider-controls .slider-controls-item--2::before {
+.slider-controls .slider-controls-item--2::before {
     content: "";
     position: absolute;
     left: 50%;
@@ -1797,12 +1794,9 @@ input[type="radio"].visually-hidden {
     margin-bottom: 26px;
 }
 
-.price-controls #min-price,
-.price-controls #max-price {
-    width: 96px;
-}
-
 .price-controls input {
+    width: 96px;
+
     margin: 0;
     padding-left: 3px;
 
