@@ -1,5 +1,3 @@
-
-
 //write-us
 
   var writeusLink = document.querySelector(".write-us-link");
