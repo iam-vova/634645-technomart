@@ -777,6 +777,11 @@ input[type="radio"].label-hidden {
     border-radius: 50%;
 }
 
+#product-1:focus ~ .slider-controls .slider-controls-item--1,
+#product-2:focus ~ .slider-controls .slider-controls-item--2 {
+    outline: 1px solid #666666;
+}
+
 .slider-list {
     margin: 0;
     padding: 0;
@@ -812,7 +817,7 @@ input[type="radio"].label-hidden {
 
 .slider-right {
     content: "";
-    
+
     position: absolute;
     z-index: 1;
     top: 114px;
@@ -840,7 +845,7 @@ input[type="radio"].label-hidden {
     background-image: url("../img/promo_perforators.jpg");
     background-repeat: no-repeat;
     background-position: 100% 0;
-}
+} 
 
 .slider-list .slider-item:nth-child(1) {
     display: none;
@@ -2044,11 +2049,13 @@ input[type="radio"].label-hidden {
     background-position: 0 0;
 }
 
-.filter-input-checkbox + label:hover::before {
+.filter-input-checkbox + label:hover::before,
+.filter-input-checkbox:focus + label::before {
     border: 2px solid #c5c5c5;
 }
 
-.filter-input-checkbox + label:hover::after {
+.filter-input-checkbox + label:hover::after,
+.filter-input-checkbox:focus + label::after {
     background-image: url("../img/checkbox-on-hover.svg");
 }
 
@@ -2080,11 +2087,13 @@ input[type="radio"].label-hidden {
     background-position: 0 0;
 }
 
-.filter-input-radio + label:hover::before {
+.filter-input-radio + label:hover::before,
+.filter-input-radio:focus + label::before {
     border-color: #b5b5b5;
 }
 
-.filter-input-radio + label:hover::after {
+.filter-input-radio + label:hover::after,
+.filter-input-radio:focus + label::after {
     background-image: url("../img/radio-on-hover.svg");
 }
 
@@ -2850,4 +2859,32 @@ color: #000000;
     border: none;
 
     background-color: #ffffff;
+}
+
+.modal-show {
+    display: block;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-10px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(10px);
+  }
+}
+
+.modal-error {
+    animation: shake 0.6s;
 }
